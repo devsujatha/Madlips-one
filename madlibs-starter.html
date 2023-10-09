@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    
+</head>
+<body>
+
+<div id="wrapper">
+    <h2>Madlibs</h2>
+    <img src="madlibz.jpg" width="20%" height="auto">
+    <p>Please enter the following information:</p>
+    <form id="madLibForm">
+        <input id="pluralNoun" placeholder="a plural noun" required><br><br>
+        <input id="noun1" placeholder="a noun" required><br><br>
+        <input id="noun2" placeholder="another noun" required><br><br>
+        <input id="song" placeholder="song" required><br><br>
+        <input id="verb" placeholder="verb" required><br><br>
+        <button type="submit" id="submitButton">Submit</button>
+    </form>
+
+    
+
+    <div id="output"></div>
+    <br>
+    <button id="againButton" type="button" onclick="goAgain()">Go Again</button>
+</div>
+
+<script>
+    function entryValidation(event) {
+        event.preventDefault(); // Prevent the form from submitting
+
+        // Check if all required input fields have values
+        var inputs = document.querySelectorAll("input[required]");
+        var isValid = true;
+
+        inputs.forEach(function (input) {
+            if (input.value.trim() === "") {
+                isValid = false;
+            }
+        });
+
+        if (isValid) {
+            // All required fields have values, so call generateMadLib
+            generateMadLib();
+        } else {
+            // Display an alert if any required field is empty
+            alert("Please fill in all required fields.");
+        }
+    }
+
+    function generateMadLib() {
+    // Get input values and convert to lowercase
+    var pluralNoun = document.getElementById("pluralNoun").value.toLowerCase();
+    var noun1 = document.getElementById("noun1").value.toLowerCase();
+    var noun2 = document.getElementById("noun2").value.toLowerCase();
+    var song = document.getElementById("song").value.toLowerCase();
+    var verb = document.getElementById("verb").value.toLowerCase();
+
+    // Create the Mad Lib story using the input values
+    var madLibStory = `<h2>Motivation Story</h2><p>Once upon a time, in a world filled with challenges, there were ${pluralNoun}.`;
+madLibStory += ` But amidst the adversity, a courageous group of ${noun1} emerged, determined to confront these obstacles and seek ${noun2}.`;
+madLibStory += ` With unyielding resolve, they chanted a powerful mantra, "${song}," as they ${verb} toward the realization of their dreams.</p>`;
+
+    // Display the story
+    document.getElementById("output").innerHTML = madLibStory;
+
+    // Show the "Go Again" button and hide the "Submit" button
+   
+    document.getElementById('submitButton').style.display = "block";
+
+    document.getElementById("output").style.display = "block";
+    document.getElementById("againButton").style.display = "block";
+}
+
+function goAgain() {
+    // Clear input values
+    document.getElementById("pluralNoun").value = "";
+    document.getElementById("noun1").value = "";
+    document.getElementById("noun2").value = "";
+    document.getElementById("song").value = "";
+    document.getElementById("verb").value = "";
+
+    // Hide the "Go Again" button and show the "Submit" button
+    document.getElementById("againButton").style.display = "none";
+    document.getElementById('submitButton').style.display = "block";
+
+    document.getElementById("output").style.display = "none";
+}
+
+    // Add an event listener to the form for entry validation
+    var madLibForm = document.getElementById("madLibForm");
+    madLibForm.addEventListener("submit", entryValidation);
+</script>
+
+</body>
+</html>

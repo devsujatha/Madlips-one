@@ -1,0 +1,57 @@
+#wrapper {
+    background-color: bisque;
+    width: 70%;
+    margin: 0 auto; 
+    padding: 2em;
+     
+    border: 2px solid #e5d6b4; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+#output {
+    display: none; /* Initially hide the output */
+    margin-top: 20px; /* Add margin for spacing */
+    font-size: 18px; /* Increase font size for readability */
+    color: #333; /* Set text color */
+    text-align: left; /* Align text to the left */
+    background-color: #fff; /* Add a white background */
+    padding: 20px; /* Add padding for spacing */
+    border: 1px solid #ddd; /* Add a subtle border */
+    border-radius: 4px; /* Add rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+}
+
+
+#againButton {
+    display: none; /* Initially hide the "Go Again" button */
+    background-color: #0073e6; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* Remove button border */
+    border-radius: 4px; /* Add rounded corners */
+    padding: 10px 20px; /* Add padding to the button */
+    font-size: 16px; /* Button font size */
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.3s ease-in-out; /* Smooth color transition */
+}
+
+#againButton:hover {
+    background-color: #ff6600; /* Change button background color on hover */
+}
+
+#submitButton{
+    
+    background-color: #ff6600; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* Remove button border */
+    border-radius: 4px; /* Add rounded corners */
+    padding: 10px 20px; /* Add padding to the button */
+    font-size: 16px; /* Button font size */
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.3s ease-in-out; /* Smooth color transition */
+}
+
+
+#submitButton:hover {
+    background-color: #0073e6; /* Change button background color on hover */
+}
