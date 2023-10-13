@@ -1,3 +1,3 @@
-[Portfolio Homepage](https://github.com/devsujatha/portfolio-web-page/blob/main/index.html)
+[Portfolio Homepage](https://devsujatha.github.io/portfolio-web-page/)
 # Madlipz
 Madlips motivation story 
